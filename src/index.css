@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", system-ui, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* iOS Continuous Corner / Squircle */
+.ios-squircle {
+  border-radius: 22.5%;
+}
+
+.ios-glass {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.ios-glass-dark {
+  background: rgba(26, 26, 30, 0.72);
+  backdrop-filter: blur(30px) saturate(190%);
+  -webkit-backdrop-filter: blur(30px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ios-glass-widget {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(36px) saturate(210%);
+  -webkit-backdrop-filter: blur(36px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ios-glass-widget-dark {
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Rolling Colors in a Circle (Mavic AI Orb) */
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverseSpin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.04);
+  }
+}
+
+@keyframes shapeRoll1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-45px, -30px) rotate(180deg) scale(0.9);
+  }
+  100% {
+    transform: translate(-90px, 35px) rotate(360deg) scale(0.7);
+    opacity: 0.85;
+  }
+}
+
+@keyframes shapeRoll2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(45px, -40px) rotate(-180deg) scale(0.9);
+  }
+  100% {
+    transform: translate(90px, 30px) rotate(-360deg) scale(0.7);
+    opacity: 0.85;
+  }
+}
+
+@keyframes shapeRoll3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0px, -50px) rotate(120deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 50px) rotate(360deg) scale(0.6);
+    opacity: 0.85;
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 4s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: reverseSpin 3s linear infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 2.5s ease-in-out infinite;
+}
+
+.animate-shape-roll-1 {
+  animation: shapeRoll1 1.8s ease-in-out infinite alternate;
+}
+
+.animate-shape-roll-2 {
+  animation: shapeRoll2 1.8s ease-in-out infinite alternate;
+}
+
+.animate-shape-roll-3 {
+  animation: shapeRoll3 1.8s ease-in-out infinite alternate;
+}
